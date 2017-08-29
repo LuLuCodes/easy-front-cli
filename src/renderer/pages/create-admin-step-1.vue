@@ -26,7 +26,7 @@
 </template>
 
 <script>
-  import ModuleConfig from '../assets/js/module-config'
+  import ModuleConfig from '../assets/js/config/module-config'
   import electron from 'electron'
   const remote = electron.remote
   const BrowserWindow = remote.BrowserWindow
