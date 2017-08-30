@@ -1,7 +1,9 @@
-export { default as CreatePackage } from './package'
-export { default as CreateReadme } from './readme'
-export { default as CreateNuxtConfig } from './nuxt-config'
-export { default as CreateEslintrc } from './eslintrc'
-export { default as CreateEditorconfig } from './editorconfig'
-export { default as CreateGitignore } from './gitignore'
-export { default as CreateAssets } from './assets'
+const files = require.context('.', false, /\.js$/)
+const process = {}
+
+files.keys().forEach(key => {
+  if (key === './index.js') return
+  process[key.replace(/(\.\/|\.js)/g, '')] = files(key).default
+})
+
+export default process

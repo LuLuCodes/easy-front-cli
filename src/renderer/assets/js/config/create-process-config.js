@@ -27,6 +27,10 @@ export function AdminProcess () {
     assets: {
       status: 1,
       content: '创建 assets资源文件'
+    },
+    components: {
+      status: 1,
+      content: '创建 components组件库'
     }
   }
 }

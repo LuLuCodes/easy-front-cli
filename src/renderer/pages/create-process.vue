@@ -25,7 +25,7 @@
 </template>
 
 <script>
-  import * as CreateAdmin from '../assets/js/create-process/admin'
+  import CreateAdmin from '../assets/js/create-process/admin'
   import {AdminProcess} from '../assets/js/config/create-process-config'
   
   import electron from 'electron'
@@ -55,52 +55,59 @@
     methods: {
       startCreateAdmin () {
         // create package.json
-        CreateAdmin.CreatePackage(this.baseOpt).then(() => {
+        CreateAdmin.package(this.baseOpt).then(() => {
           this.logs.package.status = 2
         }).catch(() => {
           this.logs.package.status = 3
         })
 
         // create REAMDME
-        CreateAdmin.CreateReadme(this.baseOpt).then(() => {
+        CreateAdmin.readme(this.baseOpt).then(() => {
           this.logs.readme.status = 2
         }).catch(() => {
           this.logs.readme.status = 3
         })
 
         // create nuxt.config.js
-        CreateAdmin.CreateNuxtConfig(this.baseOpt).then(() => {
+        CreateAdmin.nuxtConfig(this.baseOpt).then(() => {
           this.logs.nuxt.status = 2
         }).catch(() => {
           this.logs.nuxt.status = 3
         })
 
         // create editorconfig
-        CreateAdmin.CreateEditorconfig(this.baseOpt).then(() => {
+        CreateAdmin.editorconfig(this.baseOpt).then(() => {
           this.logs.editorconfig.status = 2
         }).catch(() => {
           this.logs.editorconfig.status = 3
         })
 
         // create eslintrc
-        CreateAdmin.CreateEslintrc(this.baseOpt).then(() => {
+        CreateAdmin.eslintrc(this.baseOpt).then(() => {
           this.logs.eslintrc.status = 2
         }).catch(() => {
           this.logs.eslintrc.status = 3
         })
 
         // create gitignore
-        CreateAdmin.CreateGitignore(this.baseOpt).then(() => {
+        CreateAdmin.gitignore(this.baseOpt).then(() => {
           this.logs.gitignore.status = 2
         }).catch(() => {
           this.logs.gitignore.status = 3
         })
 
         // create assets folder
-        CreateAdmin.CreateAssets(this.baseOpt).then(() => {
+        CreateAdmin.assets(this.baseOpt).then(() => {
           this.logs.assets.status = 2
         }).catch(() => {
           this.logs.assets.status = 3
+        })
+
+        // create components folder
+        CreateAdmin.components(this.baseOpt).then(() => {
+          this.logs.components.status = 2
+        }).catch(() => {
+          this.logs.components.status = 3
         })
       },
       handleBackHome () {
