@@ -62,10 +62,10 @@ export default function (opts) {
     codeFormat: {
       indent_size: 2
     },
-    succes() {
+    succes () {
       opts.success()
     },
-    erro() {
+    erro () {
       opts.error()
     }
   })
