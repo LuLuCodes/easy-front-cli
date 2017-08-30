@@ -3,12 +3,12 @@ export function AdminProcess () {
     package: {
       status: 1,
       content: '创建 package.json'
+    },
+    readme: {
+      status: 1,
+      content: '创建 README.md'
     }
     // ,
-    // readme: {
-    //   status: 1,
-    //   content: '创建 README.md'
-    // },
     // nuxt: {
     //   status: 1,
     //   content: '创建 nuxt.config.js'

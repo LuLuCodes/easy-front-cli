@@ -54,11 +54,17 @@
     methods: {
       startCreateAdmin () {
         // create package.json
-        console.log(JSON.stringify(this.baseOpt))
         CreateAdmin.CreatePackage(this.baseOpt).then(() => {
           this.logs.package.status = 2
         }).catch(() => {
           this.logs.package.status = 3
+        })
+
+        // create REAMDME
+        CreateAdmin.CreateReadme(this.baseOpt).then(() => {
+          this.logs.readme.status = 2
+        }).catch(() => {
+          this.logs.readme.status = 3
         })
       },
       handleBackHome () {
