@@ -18,7 +18,8 @@ export default function (opts) {
       },`
   }
 
-  let file = `module.exports = {
+  let file = `
+  module.exports = {
   /*
   ** Headers of the page
   */
@@ -99,7 +100,7 @@ export default function (opts) {
   return writeFile({
     directory: `${opts.saveDirectory}/${opts.name}`,
     fileName: 'nuxt.config.js',
-    data: JSON.stringify(file),
+    data: file,
     codeFormat: {
       indent_size: 2
     }
