@@ -74,6 +74,27 @@
         }).catch(() => {
           this.logs.nuxt.status = 3
         })
+
+        // create editorconfig
+        CreateAdmin.CreateEditorconfig(this.baseOpt).then(() => {
+          this.logs.editorconfig.status = 2
+        }).catch(() => {
+          this.logs.editorconfig.status = 3
+        })
+
+        // create eslintrc
+        CreateAdmin.CreateEslintrc(this.baseOpt).then(() => {
+          this.logs.eslintrc.status = 2
+        }).catch(() => {
+          this.logs.eslintrc.status = 3
+        })
+
+        // create gitignore
+        CreateAdmin.CreateGitignore(this.baseOpt).then(() => {
+          this.logs.gitignore.status = 2
+        }).catch(() => {
+          this.logs.gitignore.status = 3
+        })
       },
       handleBackHome () {
         this.$store.commit('RESET_BASE_CONFIG')

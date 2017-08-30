@@ -1,3 +1,6 @@
 export { default as CreatePackage } from './package'
 export { default as CreateReadme } from './readme'
 export { default as CreateNuxtConfig } from './nuxt-config'
+export { default as CreateEslintrc } from './eslintrc'
+export { default as CreateEditorconfig } from './editorconfig'
+export { default as CreateGitignore } from './gitignore'

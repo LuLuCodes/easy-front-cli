@@ -11,6 +11,18 @@ export function AdminProcess () {
     nuxt: {
       status: 1,
       content: '创建 nuxt.config.js'
+    },
+    editorconfig: {
+      status: 1,
+      content: '创建 .editorconfig'
+    },
+    eslintrc: {
+      status: 1,
+      content: '创建 .eslintrc.js'
+    },
+    gitignore: {
+      status: 1,
+      content: '创建 .gitignore'
     }
   }
 }
