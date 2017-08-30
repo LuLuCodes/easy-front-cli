@@ -21,11 +21,11 @@ export default function (opts) {
     data = opts.data
   }
 
-  if (!fs.existsSync(opts.saveDirectory)) {
-    fs.mkdirSync(opts.saveDirectory)
+  if (!fs.existsSync(opts.directory)) {
+    fs.mkdirSync(opts.directory)
   }
   return new Promise((resolve, reject) => {
-    fs.writeFile(`${opts.saveDirectory}/${opts.fileName}`, data, (err) => {
+    fs.writeFile(`${opts.directory}/${opts.fileName}`, data, (err) => {
       if (err) {
         reject(err)
       } else {

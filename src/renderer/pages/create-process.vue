@@ -13,25 +13,27 @@
 
 <script>
   import * as CreateAdmin from '../assets/js/create-process/admin'
-  import CreateProcessConfig from '../assets/js/config/create-process-config'
-  import { mapState } from 'vuex'
+  import {AdminProcess} from '../assets/js/config/create-process-config'
   
   export default {
     name: '',
     components: {},
     data () {
       return {
-        logs: CreateProcessConfig()
+        logs: []
       }
     },
     props: {},
     computed: {
-      ...mapState({
-        baseOpt: state => state.BaseConfig
-      })
+      baseOpt () {
+        return this.$store.state.BaseConfig
+      }
     },
     created () {
-      this.startCreateAdmin()
+      if (this.baseOpt.appType === 'admin') {
+        this.logs = AdminProcess()
+        this.startCreateAdmin()
+      }
     },
     filters: {},
     methods: {

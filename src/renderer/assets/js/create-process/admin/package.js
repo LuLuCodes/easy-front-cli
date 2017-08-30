@@ -39,7 +39,7 @@ let file = {
 }
 
 export default function (opts) {
-  const data = opts.data
+  const data = opts
   file.name = data.name
   file.version = data.version
   file.description = data.desc
@@ -56,7 +56,7 @@ export default function (opts) {
   }
 
   return writeFile({
-    directory: opts.directory,
+    directory: opts.saveDirectory,
     fileName: 'package.json',
     data: JSON.stringify(file),
     codeFormat: {

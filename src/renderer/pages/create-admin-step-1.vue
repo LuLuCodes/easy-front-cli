@@ -64,7 +64,6 @@
     methods: {
       handleSubmit () {
         let modules = getModules(this.formValidate.moduleData)
-        console.log(JSON.stringify(this.formValidate.moduleData))
         if (!modules.length) {
           this.$Message.error('请至少选择一个模块!')
         } else {
