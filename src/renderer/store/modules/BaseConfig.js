@@ -33,6 +33,7 @@ const mutations = {
     state.version = '1.0.0'
     state.desc = ''
     state.git = ''
+    state.saveDirectory = ''
   },
   SAVE_DIRECTORY_CONFIG (state, saveDirectory) {
     state.saveDirectory = saveDirectory

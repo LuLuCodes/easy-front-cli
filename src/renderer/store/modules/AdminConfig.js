@@ -5,6 +5,9 @@ const state = {
 const mutations = {
   SAVE_ADMIN_MODULE (state, modules) {
     state.modules.splice(0, state.modules.length, ...modules)
+  },
+  RESET_ADMIN_MODULE (state) {
+    state.modules.splice(0, state.modules.length)
   }
 }
 

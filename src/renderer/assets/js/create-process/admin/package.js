@@ -56,7 +56,7 @@ export default function (opts) {
   }
 
   return writeFile({
-    directory: opts.saveDirectory,
+    directory: `${opts.saveDirectory}/${opts.name}`,
     fileName: 'package.json',
     data: JSON.stringify(file),
     codeFormat: {
