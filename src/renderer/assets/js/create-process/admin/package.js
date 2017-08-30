@@ -55,18 +55,12 @@ export default function (opts) {
     file.devDependencies['sass-loader'] = '^6.0.6'
   }
 
-  writeFile({
+  return writeFile({
     directory: opts.directory,
     fileName: 'package.json',
     data: JSON.stringify(file),
     codeFormat: {
       indent_size: 2
-    },
-    succes () {
-      opts.success()
-    },
-    erro () {
-      opts.error()
     }
   })
 }

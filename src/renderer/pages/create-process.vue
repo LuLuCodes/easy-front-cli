@@ -31,7 +31,12 @@
     filters: {},
     methods: {
       startCreateAdmin () {
-        CreateAdmin.CreatePackage()
+        // create package.json
+        CreateAdmin.CreatePackage().then(() => {
+          this.logs.package.status = 2
+        }).catch(() => {
+          this.logs.package.status = 3
+        })
       }
     }
   }
