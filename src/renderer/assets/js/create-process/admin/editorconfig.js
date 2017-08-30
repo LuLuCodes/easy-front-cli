@@ -1,6 +1,6 @@
-import copyFile from '../copy-file'
+import fs from 'fs-extra'
 import path from 'path'
 
 export default function (opts) {
-  return copyFile(path.join(__dirname, '../../../../../../template/admin/.editorconfig'), `${opts.saveDirectory}/${opts.name}/.editorconfig`)
+  return fs.copy(path.join(__dirname, '../../../../../../template/admin/.editorconfig'), `${opts.saveDirectory}/${opts.name}/.editorconfig`)
 }

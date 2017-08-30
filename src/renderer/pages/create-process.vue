@@ -95,6 +95,13 @@
         }).catch(() => {
           this.logs.gitignore.status = 3
         })
+
+        // create assets folder
+        CreateAdmin.CreateAssets(this.baseOpt).then(() => {
+          this.logs.assets.status = 2
+        }).catch(() => {
+          this.logs.assets.status = 3
+        })
       },
       handleBackHome () {
         this.$store.commit('RESET_BASE_CONFIG')
