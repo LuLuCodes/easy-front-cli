@@ -7,11 +7,10 @@ export function AdminProcess () {
     readme: {
       status: 1,
       content: '创建 README.md'
+    },
+    nuxt: {
+      status: 1,
+      content: '创建 nuxt.config.js'
     }
-    // ,
-    // nuxt: {
-    //   status: 1,
-    //   content: '创建 nuxt.config.js'
-    // }
   }
 }

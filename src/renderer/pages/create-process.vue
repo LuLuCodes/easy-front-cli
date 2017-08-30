@@ -1,3 +1,4 @@
+<script src="../../../../../test/123123/nuxt.config.js"></script>
 <template>
   <div class="create-app">
     <div class="create-info">
@@ -65,6 +66,13 @@
           this.logs.readme.status = 2
         }).catch(() => {
           this.logs.readme.status = 3
+        })
+
+        // create nuxt.config.js
+        CreateAdmin.CreateNuxtConfig(this.baseOpt).then(() => {
+          this.logs.nuxt.status = 2
+        }).catch(() => {
+          this.logs.nuxt.status = 3
         })
       },
       handleBackHome () {
