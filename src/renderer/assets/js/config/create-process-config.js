@@ -30,7 +30,31 @@ export function AdminProcess () {
     },
     components: {
       status: 1,
-      content: '创建 components组件库'
+      content: '创建 components'
+    },
+    layouts: {
+      status: 1,
+      content: '创建 layouts全局布局'
+    },
+    middleware: {
+      status: 1,
+      content: '创建 middleware中间件'
+    },
+    pages: {
+      status: 1,
+      content: '创建 pages页面'
+    },
+    plugin: {
+      status: 1,
+      content: '创建 plugin插件库'
+    },
+    static: {
+      status: 1,
+      content: '创建 static静态资源'
+    },
+    store: {
+      status: 1,
+      content: '创建 vuex store'
     }
   }
 }
