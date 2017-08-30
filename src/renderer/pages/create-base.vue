@@ -40,7 +40,7 @@
             <Checkbox label="vuex"></Checkbox>
           </Checkbox-group>
         </Form-item>
-        <Form-item label="ESLint：" prop="eslint">
+        <Form-item label="ESLint：" prop="eslint" v-show="formValidate.appType !== 'admin'">
           <i-switch v-model="formValidate.eslint">
             <Icon type="android-done" slot="open"></Icon>
             <Icon type="android-close" slot="close"></Icon>

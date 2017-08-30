@@ -30,9 +30,7 @@ let file = {
     'eslint-plugin-import': '^2.7.0',
     'eslint-plugin-node': '^5.1.1',
     'eslint-plugin-promise': '^3.5.0',
-    'eslint-plugin-standard': '^3.0.1',
-    'less': '^2.7.2',
-    'less-loader': '^4.0.5'
+    'eslint-plugin-standard': '^3.0.1'
   },
   'repository': {
     'type': 'git',
@@ -53,13 +51,8 @@ export default function (opts) {
   }
 
   if (data.css.indexOf('sass') > -1) {
-    file.devDependencies['node-sass'] = '^3.10.1'
-    file.devDependencies['sass-loader'] = '^4.0.2'
-  }
-
-  if (data.eslint) {
-    file.devDependencies['eslint'] = '^3.12.2'
-    file.devDependencies['eslint-plugin-html'] = '^1.7.0'
+    file.devDependencies['node-sass'] = '^4.5.3'
+    file.devDependencies['sass-loader'] = '^6.0.6'
   }
 
   writeFile({
@@ -69,11 +62,11 @@ export default function (opts) {
     codeFormat: {
       indent_size: 2
     },
-    success() {
-      opts.success();
+    succes() {
+      opts.success()
     },
-    error() {
-      opts.error();
+    erro() {
+      opts.error()
     }
-  });
-};
+  })
+}
