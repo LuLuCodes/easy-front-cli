@@ -14,6 +14,7 @@
 <script>
   import * as CreateAdmin from '../assets/js/create-process/admin'
   import CreateProcessConfig from '../assets/js/config/create-process-config'
+  import { mapState } from 'vuex'
   
   export default {
     name: '',
@@ -24,7 +25,11 @@
       }
     },
     props: {},
-    computed: {},
+    computed: {
+      ...mapState({
+        baseOpt: state => state.BaseConfig
+      })
+    },
     created () {
       this.startCreateAdmin()
     },
@@ -32,7 +37,8 @@
     methods: {
       startCreateAdmin () {
         // create package.json
-        CreateAdmin.CreatePackage().then(() => {
+        console.log(JSON.stringify(this.baseOpt))
+        CreateAdmin.CreatePackage(this.baseOpt).then(() => {
           this.logs.package.status = 2
         }).catch(() => {
           this.logs.package.status = 3
