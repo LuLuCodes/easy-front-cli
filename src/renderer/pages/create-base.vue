@@ -10,7 +10,7 @@
             </Tooltip>
             <span>：</span>
           </div>
-          <Select v-model="formValidate.appType" style="width:200px">
+          <Select v-model="formValidate.appType" style="width:200px" @on-change="handleAppTypeChange">
             <Option value="admin" key="admin">后台工程</Option>
             <Option value="h5" key="h5">H5工程</Option>
           </Select>
@@ -22,7 +22,7 @@
             <Checkbox label="sass"></Checkbox>
           </Checkbox-group>
         </Form-item>
-        <Form-item label="Ajax：" prop="ajax">
+        <Form-item label="Ajax：" prop="ajax" v-show="formValidate.appType !== 'admin'">
           <div slot="label">
             <span>Ajax</span>
             <Tooltip content="基于 axios">
@@ -35,7 +35,7 @@
             <Icon type="android-close" slot="close"></Icon>
           </i-switch>
         </Form-item>
-        <Form-item label="状态管理：" prop="store">
+        <Form-item label="状态管理：" prop="store" v-show="formValidate.appType !== 'admin'">
           <Checkbox-group v-model="formValidate.store">
             <Checkbox label="vuex"></Checkbox>
           </Checkbox-group>
@@ -103,6 +103,12 @@
     props: {},
     computed: {},
     created () {
+      if (this.formValidate.appType === 'admin') {
+        this.$Message.info({
+          content: '后台工程采用muxt，默认集成了axios和vuex！',
+          duration: 3
+        })
+      }
     },
     filters: {},
     methods: {
@@ -119,6 +125,14 @@
       handleReset (name) {
         this.$refs[name].resetFields()
         this.$store.commit('RESET_BASE_CONFIG', this.formValidate)
+      },
+      handleAppTypeChange (value) {
+        if (value === 'admin') {
+          this.$Message.info({
+            content: '后台工程采用muxt，默认集成了axios和vuex！',
+            duration: 3
+          })
+        }
       }
     }
   }

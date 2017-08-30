@@ -1,104 +1,16 @@
 export function AdminProcess () {
-  return [
-    {
-      title: '会员/客户模块',
-      expand: true,
-      checked: true,
-      decs: 'client',
-      children: [
-        {
-          title: '会员/客户基础模块',
-          expand: true,
-          checked: true,
-          decs: 'client-base',
-          children: []
-        },
-        {
-          title: '会员/客户等级模块',
-          expand: true,
-          checked: true,
-          decs: 'client-level',
-          children: []
-        },
-        {
-          title: '会员/客户价格模块',
-          expand: true,
-          checked: true,
-          decs: 'client-price',
-          children: []
-        }
-      ]
+  return {// 1 is doing, 2 is done, 3 is error
+    package: {
+      status: 1,
+      content: '创建 package.json'
     },
-    {
-      title: '商品模块',
-      expand: true,
-      checked: true,
-      decs: 'good',
-      children: [
-        {
-          title: '商品基础模块',
-          expand: true,
-          checked: true,
-          decs: 'good-base',
-          children: []
-        },
-        {
-          title: '商品分类模块',
-          expand: true,
-          checked: true,
-          decs: 'good-category',
-          children: []
-        },
-        {
-          title: '商品单位模块',
-          expand: true,
-          checked: true,
-          decs: 'good-unit',
-          children: []
-        },
-        {
-          title: '商品标签模块',
-          expand: true,
-          checked: true,
-          decs: 'good-tag',
-          children: []
-        }
-      ]
+    readme: {
+      status: 1,
+      content: '创建 README.md'
     },
-    {
-      title: '订单模块',
-      expand: true,
-      checked: true,
-      decs: 'order',
-      children: []
-    },
-    {
-      title: '活动模块',
-      expand: true,
-      checked: true,
-      decs: 'active',
-      children: []
-    },
-    {
-      title: '分销模块',
-      expand: true,
-      checked: true,
-      decs: 'distribution',
-      children: []
-    },
-    {
-      title: '积分模块',
-      expand: true,
-      checked: true,
-      decs: 'integral',
-      children: []
-    },
-    {
-      title: '系统设置模块',
-      expand: true,
-      checked: true,
-      decs: 'setting',
-      children: []
+    nuxt: {
+      status: 1,
+      content: '创建 nuxt.config.js'
     }
-  ]
+  }
 }
