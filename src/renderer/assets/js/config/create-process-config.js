@@ -44,9 +44,9 @@ export function AdminProcess () {
       status: 1,
       content: '创建 pages页面'
     },
-    plugin: {
+    plugins: {
       status: 1,
-      content: '创建 plugin插件库'
+      content: '创建 plugins插件库'
     },
     static: {
       status: 1,

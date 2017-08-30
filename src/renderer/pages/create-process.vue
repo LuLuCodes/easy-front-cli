@@ -109,6 +109,48 @@
         }).catch(() => {
           this.logs.components.status = 3
         })
+
+        // create layouts folder
+        CreateAdmin.layouts(this.baseOpt).then(() => {
+          this.logs.layouts.status = 2
+        }).catch(() => {
+          this.logs.layouts.status = 3
+        })
+
+        // create middleware folder
+        CreateAdmin.middleware(this.baseOpt).then(() => {
+          this.logs.middleware.status = 2
+        }).catch(() => {
+          this.logs.middleware.status = 3
+        })
+
+        // create pages folder
+        CreateAdmin.pages(this.baseOpt).then(() => {
+          this.logs.pages.status = 2
+        }).catch(() => {
+          this.logs.pages.status = 3
+        })
+
+        // create plugins folder
+        CreateAdmin.plugins(this.baseOpt).then(() => {
+          this.logs.plugins.status = 2
+        }).catch(() => {
+          this.logs.plugins.status = 3
+        })
+
+        // create static folder
+        CreateAdmin.static(this.baseOpt).then(() => {
+          this.logs.static.status = 2
+        }).catch(() => {
+          this.logs.static.status = 3
+        })
+
+        // create layouts folder
+        CreateAdmin.store(this.baseOpt).then(() => {
+          this.logs.store.status = 2
+        }).catch(() => {
+          this.logs.store.status = 3
+        })
       },
       handleBackHome () {
         this.$store.commit('RESET_BASE_CONFIG')
