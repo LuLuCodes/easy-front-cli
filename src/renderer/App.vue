@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app">
     <div class="title">{{title}}</div>
     <div id="app" v-cloak>
       <keep-alive>
@@ -24,5 +24,8 @@
 </script>
 
 <style>
-  /* CSS */
+  .app {
+    height: 100%;
+    overflow: hidden;
+  }
 </style>

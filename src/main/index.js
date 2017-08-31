@@ -20,8 +20,8 @@ function createWindow () {
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    height: 360,
-    width: 572,
+    height: 572,
+    width: 360,
     title: 'Easy Front',
     center: true
     // ,
